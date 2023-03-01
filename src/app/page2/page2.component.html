@@ -1,0 +1,18 @@
+<h1>Page 2: Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.gender }}</td>
+    </tr>
+  </tbody>
+</table>
