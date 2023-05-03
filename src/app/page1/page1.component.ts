@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-page1',
@@ -8,15 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class Page1Component implements OnInit {
   products: any[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    // get products data from backend or service
-    this.products = [
-      { name: 'Product 1', price: 10 },
-      { name: 'Product 2', price: 20 },
-      { name: 'Product 3', price: 30 },
-    ];
+    this.http.get<any[]>('localhost:7198/api/Products').subscribe(products => {
+      this.products = products;
+    });
   }
-
 }

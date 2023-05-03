@@ -8,10 +8,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-    </tr>
+    <div *ngFor="let product of products">
+      <h2>{{ product.name }}</h2>
+      <p>Price: {{ product.price }}</p>
+    </div>
   </tbody>
 </table>
 
