@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: my-app
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: my-app
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
-      

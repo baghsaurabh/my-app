@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: nirakarnepal/ng-app:v1
+          image: saurabhbagh/my-app:v6
           imagePullPolicy: Always
           ports:
             - containerPort: 80  
+          env:
+            - name: BACKEND_SERVICE_NAME
+              value: my-backend
