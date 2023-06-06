@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/Environments/environment.development';
+
+
 
 @Component({
   selector: 'app-page1',
@@ -12,13 +15,14 @@ export class Page1Component implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    const apiUrl = environment.apiUrl;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:4200'
+        'Access-Control-Allow-Origin': apiUrl
       })
     };
-    this.http.get<any[]>('https://localhost:7198/api/Products', httpOptions)
+    this.http.get<any[]>(apiUrl, httpOptions)
       .subscribe(products => {
         this.products = products;
       });
