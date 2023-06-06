@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/Environments/environment.development';
 
 
-
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.component.html',
@@ -16,6 +15,7 @@ export class Page1Component implements OnInit {
 
   ngOnInit(): void {
     const apiUrl = environment.apiUrl;
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
